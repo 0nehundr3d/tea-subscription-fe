@@ -1,3 +1,5 @@
+import './Tea.css'
+
 function Tea({ tea }) {
     return (
         <article className="tea">

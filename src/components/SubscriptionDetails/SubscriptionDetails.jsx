@@ -39,13 +39,13 @@ function SubscriptionDetails() {
             <p>Frequency: every {subscriptionDetails["frequency"]}</p>
             <p>Price: {subscriptionDetails["price"]}</p>
             <b>Teas</b>
-            <ul>
+            <div className="tea-container">
                 {subscriptionDetails["teas"].map((tea) => {
                     return(
-                        <li><Tea tea={tea}/></li>
+                        <Tea tea={tea}/>
                     )
                 })}
-            </ul>
+            </div>
             <button onClick={toggleSubscription}>{subscriptionDetails["status"] == "active" ? "Deactivate Subscription" : "Activate Subscription"}</button>
             <button onClick={returnHome}>Return Home</button>
         </section>

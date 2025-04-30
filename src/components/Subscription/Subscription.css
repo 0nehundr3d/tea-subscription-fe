@@ -4,4 +4,7 @@
     width: 19.5em;
     text-align: center;
     margin: 1em;
+    font-size: 1.3em;
+    background-color: lightgray;
+    cursor: pointer;
 }

@@ -1,0 +1,23 @@
+.SubscriptionDetails {
+    text-align: center;
+}
+
+.tea {
+    border-style: solid;
+    width: 19.5em;
+    margin: 1em;
+    text-align: center;
+    background-color: lightgray;
+}
+
+ul {
+    display: table;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+button {
+    height: 3em;
+    margin: .7em;
+    cursor: pointer;
+}

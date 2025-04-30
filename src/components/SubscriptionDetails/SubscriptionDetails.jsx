@@ -10,7 +10,12 @@ function SubscriptionDetails() {
 
     useEffect(() => {
         fetch(`http://127.0.0.1:3000/api/v1/subscriptions/${id}`)
-        .then((response) => { return response.json() })
+        .then((response) => {
+            if (response.status === 404) {
+                navigate("/subscriptions/not_found")
+            }
+            return response.json()
+        })
         .then((data) => { setSubscriptionDetails(data["data"]) })
         .catch((err) => { console.error("Fetch failed: ", err) })
     }, [])

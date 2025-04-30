@@ -1,5 +1,6 @@
 import "./App.css"
 import Home from "../home/home"
+import SubscriptionDetails from "../SubscriptionDetails/SubscriptionDetails"
 import { Routes, Route } from "react-router-dom"
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/subscriptions/:id" element={<SubscriptionDetails />} />
       </Routes>
     </section>
   )

@@ -24,7 +24,6 @@ function Home() {
             <h2>Subscriptions</h2>
             <section className="subscriptions">
                 {subscriptions.map((subscription) => {
-                    console.log(subscription)
                     return (
                         <Subscription
                             id={subscription.id}

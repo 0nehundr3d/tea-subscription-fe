@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Tea from "../Tea/Tea"
 
 function SubscriptionDetails() {
     const id = useParams().id
-    const [subscriptionDetails, setSubscriptionDetails] = useState({})
+    const [subscriptionDetails, setSubscriptionDetails] = useState({teas:[]})
 
     useEffect(() => {
         fetch(`http://127.0.0.1:3000/api/v1/subscriptions/${id}`)
@@ -26,6 +27,14 @@ function SubscriptionDetails() {
             <p>Status: {subscriptionDetails["status"]}</p>
             <p>Frequency: every {subscriptionDetails["frequency"]}</p>
             <p>Price: {subscriptionDetails["price"]}</p>
+            <b>Teas</b>
+            <ul>
+                {subscriptionDetails["teas"].map((tea) => {
+                    return(
+                        <li><Tea tea={tea}/></li>
+                    )
+                })}
+            </ul>
         </section>
     )
 }

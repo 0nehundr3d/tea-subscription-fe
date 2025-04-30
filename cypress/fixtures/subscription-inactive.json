@@ -1,0 +1,28 @@
+{
+    "data": {
+      "id": 2,
+      "customer_name": "customer1 lastname",
+      "title": "demo teas 2",
+      "status": "inactive",
+      "frequency": "1 month",
+      "price": 30.35,
+      "teas": [
+        {
+          "id": 1,
+          "title": "demo tea 1",
+          "description": "its tea",
+          "temperature": 3600,
+          "brew_time": "13 seconds",
+          "price": 13
+        },
+        {
+          "id": 2,
+          "title": "demo tea 2",
+          "description": "its probably also tea",
+          "temperature": 200,
+          "brew_time": "12 days",
+          "price": 17.35
+        }
+      ]
+    }
+  }

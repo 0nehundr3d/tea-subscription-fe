@@ -40,7 +40,7 @@ function SubscriptionDetails() {
         <section className="SubscriptionDetails">
             <h2>{subscriptionDetails["title"]}</h2>
             <p>Customer: {subscriptionDetails["customer_name"]}</p>
-            <p>Status: {subscriptionDetails["status"]}</p>
+            <p id="status">Status: {subscriptionDetails["status"]}</p>
             <p>Frequency: every {subscriptionDetails["frequency"]}</p>
             <p>Price: {subscriptionDetails["price"]}</p>
             <b>Teas</b>

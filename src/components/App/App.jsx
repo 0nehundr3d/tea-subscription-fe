@@ -2,6 +2,7 @@ import "./App.css"
 import Home from "../home/home"
 import SubscriptionDetails from "../SubscriptionDetails/SubscriptionDetails"
 import { Routes, Route } from "react-router-dom"
+import NotFound from "../NotFound/NotFound"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/subscriptions/:id" element={<SubscriptionDetails />} />
+        <Route path="/subscriptions/not_found" element={<NotFound />} />
       </Routes>
     </section>
   )

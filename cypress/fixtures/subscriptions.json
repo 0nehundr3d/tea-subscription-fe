@@ -1,0 +1,27 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "type": "subscription",
+      "attributes": {
+        "title": "demo teas",
+        "customer_name": "customer1 lastname",
+        "status": "active",
+        "frequency": "1 month",
+        "price": 13
+      }
+    },
+    {
+      "id": 2,
+      "type": "subscription",
+      "attributes": {
+        "title": "demo teas 2",
+        "customer_name": "customer1 lastname",
+        "status": "active",
+        "frequency": "1 month",
+        "price": 30.35
+      }
+    }
+  ],
+  "count": 2
+}

@@ -8,17 +8,22 @@ function SubscriptionDetails() {
 
     useEffect(() => {
         fetch(`http://127.0.0.1:3000/api/v1/subscriptions/${id}`)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Something went wrong')
-            }
-            return response.json()
-        })
-        .then((data) => {setSubscriptionDetails(data["data"])})
-        .catch((err) => {
-            console.error("Fetch failed: ", err)
-        })
+        .then((response) => { return response.json() })
+        .then((data) => { setSubscriptionDetails(data["data"]) })
+        .catch((err) => { console.error("Fetch failed: ", err) })
     }, [])
+
+    const toggleSubscription = () => {
+        fetch(`http://127.0.0.1:3000/api/v1/subscriptions/${id}`,{
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ status: subscriptionDetails["status"] == "active" ? "inactive" : "active" })
+            }
+        )
+        .then((response) => { return response.json() })
+        .then((data) => { setSubscriptionDetails(data["data"]) })
+        .catch((err) => { console.error("Fetch failed: ", err) })
+    }
 
     return (
         <section className="SubscriptionDetails">
@@ -35,6 +40,7 @@ function SubscriptionDetails() {
                     )
                 })}
             </ul>
+            <button onClick={toggleSubscription}>{subscriptionDetails["status"] == "active" ? "Deactivate" : "Activate"}</button>
         </section>
     )
 }

@@ -5,6 +5,11 @@ describe('homepage spec', () => {
       fixture: "subscriptions"
     })
 
+    cy.intercept("GET", "http://127.0.0.1:3000/api/v1/subscriptions/2", {
+      statusCode: 200,
+      fixture: "subscription"
+    })
+
     cy.visit('http://localhost:5173/')
   })
 
@@ -19,5 +24,10 @@ describe('homepage spec', () => {
     cy.get('.subscription').first().find('p').should('have.length', 4)
     cy.get('.subscription').last().find('h3').should('have.text', "demo teas 2")
     cy.get('.subscription').last().find('p').should('have.length', 4)
+  })
+
+  it('Navigates to the details page when a subscription is clicked on', () => {
+    cy.get('.subscriptions').last().click()
+    cy.url().should('eq', "http://localhost:5173/subscriptions/2")
   })
 })
